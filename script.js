@@ -47,7 +47,7 @@ var generateBank = function() {
     if(upperConfirm === true) {
       emptyChar = emptyChar.concat(upperChar);
     }
-    console.log(emptyChar);
+  
   } else {
     alert("You need to choose characters for your password!");
     generateBank();
@@ -71,8 +71,10 @@ var generatePassword = function() {
       for(var i = 0; i < passLength; i++){
         passFinal += emptyChar[Math.floor(Math.random() * emptyChar.length)]
       };
+
+      //here, you can see that the password logs correctly.
       console.log(passFinal);
-      
+      //this does not work.
       return passFinal.join("");
       } else {
         generatePassword();
