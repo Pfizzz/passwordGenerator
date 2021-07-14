@@ -23,6 +23,7 @@ var upperConfirm = "";
 
 // function to generate emptyChar array (must be above generatePassword function due to scope)
 var generateBank = function () {
+  emptyChar = "";
   passFinal = "";
   var specialConfirm = confirm("Would you like to include special characters?");
   var numberConfirm = confirm("Would you like to include numbers?");
