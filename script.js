@@ -28,6 +28,7 @@ var upperConfirm = "";
 
 //FUNCTION to generate emptyChar array (must be above generatePassword function due to scope)
 var generateBank = function() {
+  passFinal = "";
   var specialConfirm = confirm("Would you like to include special characters?");
   var numberConfirm = confirm("Would you like to include numbers?");
   var lowerConfirm = confirm("Would you like to include lower-case letters?");
@@ -71,25 +72,22 @@ var generatePassword = function() {
       for(var i = 0; i < passLength; i++){
         passFinal += emptyChar[Math.floor(Math.random() * emptyChar.length)]
       };
-
-      //here, you can see that the password logs correctly.
-      console.log(passFinal);
-      //this does not work.
-      return passFinal.join("");
+      //returns the final password and sends it back to writePassword().
+      return passFinal;
       } else {
         generatePassword();
       }
+}
+  
 
-      }
 
-// THIS IS THE PART I DO NOT UNDERSTAND. I DONT KNOW WHY I CANT GET THE VALUE TO RETURN FOR THE WRITEPASSWORD FUNCTION.
 // return the password
 
   
 // Write password to the #password input
 function writePassword() {
+  
   var password = generatePassword();
-  console.log(password);
 
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
