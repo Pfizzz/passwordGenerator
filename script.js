@@ -69,7 +69,7 @@ var generatePassword = function () {
     //returns the final password and sends it back to writePassword().
     return passFinal;
   } else {
-    generatePassword();
+    return generatePassword();
   }
 }
 
